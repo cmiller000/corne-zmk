@@ -121,13 +121,6 @@
         #binding-cells = <0>;
         bindings = <&kp SEMICOLON>, <&kp RGUI>;
     };
-
-    alt_u_shift_a: alt_u_shift_a {
-        compatible = "zmk,behavior-macro";
-        label = "ALT_U_SHIFT_A";
-        #binding-cells = <0>;
-        bindings = <&kp LALT>, <&kp U>, <&kp LSFT>, <&kp A>;
-    };
 };
 
     keymap {
