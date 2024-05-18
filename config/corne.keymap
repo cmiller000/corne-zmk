@@ -36,7 +36,7 @@
             #binding-cells = <0>;
             bindings =
                 <&kp LALT &kp U>,
-                <&macro_wait_time 15>,
+                <&macro_wait_time 2>,
                 <&kp LSHFT &kp A>;
 
             label = "ALT_U_SHIFT_A";
