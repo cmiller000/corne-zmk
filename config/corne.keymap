@@ -36,11 +36,10 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp LALT &kp U>,
+                <&kp LA(U)>,
                 <&macro_release>,
-                <&macro_wait_time 2>,
                 <&macro_press>,
-                <&kp LSHFT &kp A>,
+                <&kp LS(A)>,
                 <&macro_release>;
 
             label = "ALT_U_SHIFT_A";
