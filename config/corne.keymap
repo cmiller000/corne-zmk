@@ -141,7 +141,7 @@
             >;
         };
 
-        numpad-shifted {
+        numpad_shifted {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &kp LS(N7)  &kp LS(N8)  &kp LS(N9)  &trans       &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &kp LS(N4)  &kp LS(N5)  &kp LS(N6)  &key_repeat  &trans  &trans
