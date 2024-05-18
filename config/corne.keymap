@@ -43,7 +43,6 @@
         };
     };
 
-/ {
     behaviors {
         caps_blue: caps_blue {
             compatible = "zmk,behavior-tap-dance";
