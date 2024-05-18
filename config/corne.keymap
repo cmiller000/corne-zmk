@@ -98,6 +98,24 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+
+        tap_umu: tap_umu {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_UMU";
+            #binding-cells = <0>;
+            bindings = <&umlu>, <&cap_umu>;
+        };
+
+        tap_umo: tap_umo {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TAP_UMO";
+            bindings = <&cap_umo>, <&umlo>;
+
+            #binding-cells = <2>;
+            hold-trigger-key-positions = <16>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <160>;
+        };
     };
 
     keymap {
