@@ -43,7 +43,8 @@
         };
     };
 
-        behaviors {
+       / {
+    behaviors {
         caps_blue: caps_blue {
             compatible = "zmk,behavior-tap-dance";
             label = "CAPS_BLUE";
@@ -76,14 +77,14 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_F";
             tapping-term-ms = <175>;
-            bindings = <&kp F>, <&kp LSHIFT>;
+            bindings = <&kp F>, <&kp LSHFT>;
         };
 
         tap_dance_j: tap_dance_j {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_J";
             tapping-term-ms = <175>;
-            bindings = <&kp J>, <&kp RSHIFT>;
+            bindings = <&kp J>, <&kp RSHFT>;
         };
 
         tap_dance_k: tap_dance_k {
@@ -107,6 +108,17 @@
             bindings = <&kp SEMICOLON>, <&kp RGUI>;
         };
     };
+
+    keymap {
+        compatible = "zmk,keymap";
+        default_layer {
+            bindings = <
+                &tap_dance_a &tap_dance_s &tap_dance_d &tap_dance_f &kp G 
+                &kp H &tap_dance_j &tap_dance_k &tap_dance_l &tap_dance_semicolon
+            >;
+        };
+    };
+};
 
     keymap {
         compatible = "zmk,keymap";
