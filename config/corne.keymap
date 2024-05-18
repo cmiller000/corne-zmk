@@ -34,7 +34,11 @@
         alt_u_shift_a: alt_u_shift_a {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LALT &kp U &kp LSFT &kp A>;
+            bindings =
+                <&kp LALT &kp U>,
+                <&macro_wait_time 15>,
+                <&kp LEFT_SHIFT &kp A>;
+
             label = "ALT_U_SHIFT_A";
         };
     };
