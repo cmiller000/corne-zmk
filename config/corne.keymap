@@ -31,7 +31,7 @@
             label = "UMLO";
         };
 
-        alt_u_shift_a: alt_u_shift_a {
+        cap_uma: alt_u_shift_a {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -43,6 +43,34 @@
                 <&macro_release>;
 
             label = "ALT_U_SHIFT_A";
+        };
+
+        cap_umu: cap_umu {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LA(U)>,
+                <&macro_release>,
+                <&macro_press>,
+                <&kp LS(U)>,
+                <&macro_release>;
+
+            label = "CAP_UMU";
+        };
+
+        cap_umo: cap_umo {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LA(U)>,
+                <&macro_release>,
+                <&macro_press>,
+                <&kp LS(O)>,
+                <&macro_release>;
+
+            label = "CAP_UMO";
         };
     };
 
@@ -58,7 +86,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_A";
             #binding-cells = <0>;
-            bindings = <&umua>, <&alt_u_shift_a>;
+            bindings = <&umua>, <&cap_uma>;
         };
 
         hm: homerow_mods {
