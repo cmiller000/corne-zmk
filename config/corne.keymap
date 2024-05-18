@@ -68,13 +68,6 @@
             bindings = <&caps_word>, <&sl 4>;
         };
 
-        numpad: numpad {
-            compatible = "zmk,behavior-tap-dance";
-            label = "NUMPAD";
-            #binding-cells = <0>;
-            bindings = <&mo 1>, <&mo 3>;
-        };
-
         um_a: um_a {
             compatible = "zmk,behavior-tap-dance";
             label = "UM_A";
