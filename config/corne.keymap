@@ -30,32 +30,6 @@
             bindings = <&kp LA(U) &kp O>;
             label = "UMLO";
         };
-
-        cap_u: cap_u {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <>;
-            label = "CAP_U";
-        };
-
-        cap_a: cap_a {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LA(U)>,
-                <&macro_release>,
-                <&kp LS(A)>;
-
-            label = "CAP_A";
-        };
-
-        cap_o: cap_o {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <>;
-            label = "CAP_O";
-        };
     };
 
     behaviors {
