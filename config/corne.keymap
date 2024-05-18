@@ -44,81 +44,89 @@
     };
 
     behaviors {
-        caps_blue: caps_blue {
-            compatible = "zmk,behavior-tap-dance";
-            label = "CAPS_BLUE";
-            #binding-cells = <0>;
-            bindings = <&caps_word>, <&sl 3>;
-        };
-
-        tap_a: tap_a {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_A";
-            #binding-cells = <0>;
-            bindings = <&umua>, <&alt_u_shift_a>;
-        };
-    hm_a: hm_a {
+    caps_blue: caps_blue {
         compatible = "zmk,behavior-tap-dance";
-        label = "HM_A";
+        label = "CAPS_BLUE";
         #binding-cells = <0>;
+        bindings = <&caps_word>, <&sl 3>;
+    };
+
+    tap_a: tap_a {
+        compatible = "zmk,behavior-tap-dance";
+        label = "TAP_A";
+        #binding-cells = <0>;
+        bindings = <&umua>, <&alt_u_shift_a>;
+    };
+
+    tap_dance_a: tap_dance_a {
+        compatible = "zmk,behavior-tap-dance";
+        label = "TAP_A";
         tapping_term_ms = <175>;
+        #binding-cells = <0>;
         bindings = <&kp A>, <&kp LGUI>;
     };
 
-    hm_s: hm_s {
+    tap_dance_s: tap_dance_s {
         compatible = "zmk,behavior-tap-dance";
-        label = "HM_S";
-        #binding-cells = <0>;
+        label = "TAP_S";
         tapping_term_ms = <175>;
+        #binding-cells = <0>;
         bindings = <&kp S>, <&kp LALT>;
     };
 
-    hm_d: hm_d {
+    tap_dance_d: tap_dance_d {
         compatible = "zmk,behavior-tap-dance";
-        label = "HM_D";
-        #binding-cells = <0>;
+        label = "TAP_D";
         tapping_term_ms = <175>;
+        #binding-cells = <0>;
         bindings = <&kp D>, <&kp LCTRL>;
     };
 
-    hm_f: hm_f {
+    tap_dance_f: tap_dance_f {
         compatible = "zmk,behavior-tap-dance";
-        label = "HM_F";
-        #binding-cells = <0>;
+        label = "TAP_F";
         tapping_term_ms = <175>;
+        #binding-cells = <0>;
         bindings = <&kp F>, <&kp LSHIFT>;
     };
 
-    hm_j: hm_j {
+    tap_dance_j: tap_dance_j {
         compatible = "zmk,behavior-tap-dance";
-        label = "HM_J";
-        #binding-cells = <0>;
+        label = "TAP_J";
         tapping_term_ms = <175>;
+        #binding-cells = <0>;
         bindings = <&kp J>, <&kp RSHIFT>;
     };
 
-    hm_k: hm_k {
+    tap_dance_k: tap_dance_k {
         compatible = "zmk,behavior-tap-dance";
-        label = "HM_K";
-        #binding-cells = <0>;
+        label = "TAP_K";
         tapping_term_ms = <175>;
+        #binding-cells = <0>;
         bindings = <&kp K>, <&kp RCTRL>;
     };
 
-    hm_l: hm_l {
+    tap_dance_l: tap_dance_l {
         compatible = "zmk,behavior-tap-dance";
-        label = "HM_L";
-        #binding-cells = <0>;
+        label = "TAP_L";
         tapping_term_ms = <175>;
+        #binding-cells = <0>;
         bindings = <&kp L>, <&kp RALT>;
     };
 
-    hm_semicolon: hm_semicolon {
+    tap_dance_semicolon: tap_dance_semicolon {
         compatible = "zmk,behavior-tap-dance";
-        label = "HM_SEMICOLON";
-        #binding-cells = <0>;
+        label = "TAP_SEMICOLON";
         tapping_term_ms = <175>;
+        #binding-cells = <0>;
         bindings = <&kp SEMICOLON>, <&kp RGUI>;
+    };
+
+    alt_u_shift_a: alt_u_shift_a {
+        compatible = "zmk,behavior-macro";
+        label = "ALT_U_SHIFT_A";
+        #binding-cells = <0>;
+        bindings = <&kp LALT>, <&kp U>, <&kp LSFT>, <&kp A>;
     };
 };
 
