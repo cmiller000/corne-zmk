@@ -137,7 +137,7 @@
         numpad_shifted {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &kp LS(N7)  &kp LS(N8)  &kp LS(N9)  &trans       &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp LS(N4)  &kp LS(N5)  &kp LS(N6)  &key_repeat  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp LS(N4)  &kp LS(N5)  &kp LS(N6)  &kp KEY_REPEAT  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &kp LS(N1)  &kp LS(N2)  &kp LS(N3)  &trans       &trans  &trans
                         &trans  &trans  &trans    &trans      &trans      &trans
             >;
