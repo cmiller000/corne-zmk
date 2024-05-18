@@ -43,7 +43,7 @@
         };
     };
 
-behaviors {
+    behaviors {
         caps_blue: caps_blue {
             compatible = "zmk,behavior-tap-dance";
             label = "CAPS_BLUE";
@@ -51,70 +51,12 @@ behaviors {
             bindings = <&caps_word>, <&sl 3>;
         };
 
-        tap_dance_a: tap_dance_a {
+        tap_a: tap_a {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_A";
-            tapping-term-ms = <175>;
-            bindings = <&kp A>, <&kp LGUI>;
+            #binding-cells = <0>;
+            bindings = <&umua>, <&alt_u_shift_a>;
         };
-
-        tap_dance_s: tap_dance_s {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_S";
-            tapping-term-ms = <175>;
-            bindings = <&kp S>, <&kp LALT>;
-        };
-
-        tap_dance_d: tap_dance_d {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_D";
-            tapping-term-ms = <175>;
-            bindings = <&kp D>, <&kp LCTRL>;
-        };
-
-        tap_dance_f: tap_dance_f {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_F";
-            tapping-term-ms = <175>;
-            bindings = <&kp F>, <&kp LSHFT>;
-        };
-
-        tap_dance_j: tap_dance_j {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_J";
-            tapping-term-ms = <175>;
-            bindings = <&kp J>, <&kp RSHFT>;
-        };
-
-        tap_dance_k: tap_dance_k {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_K";
-            tapping-term-ms = <175>;
-            bindings = <&kp K>, <&kp RCTRL>;
-        };
-
-        tap_dance_l: tap_dance_l {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_L";
-            tapping-term-ms = <175>;
-            bindings = <&kp L>, <&kp RALT>;
-        };
-
-        tap_dance_semicolon: tap_dance_semicolon {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_SEMICOLON";
-            tapping-term-ms = <175>;
-            bindings = <&kp SEMICOLON>, <&kp RGUI>;
-        };
-    };
-
-    keymap {
-        compatible = "zmk,keymap";
-        default_layer {
-            bindings = <
-                &tap_dance_a &tap_dance_s &tap_dance_d &tap_dance_f &kp G 
-                &kp H &tap_dance_j &tap_dance_k &tap_dance_l &tap_dance_semicolon
-              };
     };
 
     keymap {
