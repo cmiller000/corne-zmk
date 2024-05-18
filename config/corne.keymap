@@ -10,11 +10,46 @@
 
 / {
     macros {
-        u: u {
+        umlu: u {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LA(U) &kp U>;
             label = "U";
+        };
+
+        umua: umua {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(U) &kp A>;
+            label = "UMUA";
+        };
+
+        umlo: umlo {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(U) &kp O>;
+            label = "UMLO";
+        };
+
+        cap_u: cap_u {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <>;
+            label = "CAP_U";
+        };
+
+        cap_a: cap_a {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(U) &kp LS(A)>;
+            label = "CAP_A";
+        };
+
+        cap_o: cap_o {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <>;
+            label = "CAP_O";
         };
     };
 
@@ -55,10 +90,10 @@
 
             display-name = "Lower";
             bindings = <
-&kp TAB     &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N7        &kp N7        &kp N9        &kp ASTERISK  &kp LEFT_BRACE         &kp RIGHT_BRACE
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp EQUAL     &mt LCMD LEFT_BRACKET  &mt LEFT_SHIFT RIGHT_BRACKET
-&kp LSHFT   &trans        &trans        &trans        &trans        &trans          &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp MINUS     &kp LEFT_PARENTHESIS   &kp RIGHT_PARENTHESIS
-                                        &kp LGUI      &mo 4         &kp SPACE       &kp RET       &trans        &kp N0
+&kp TAB    &kp N1     &kp N2     &kp LS(LG(N2))  &kp LS(LG(T))  &kp LG(LS(N5))    &kp N7        &kp N7        &kp N9        &kp ASTERISK  &kp LEFT_BRACE         &kp RIGHT_BRACE
+&kp SPACE  &kp SPACE  &kp SPACE  &kp SPACE       &kp SPACE      &kp SPACE         &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp EQUAL     &mt LCMD LEFT_BRACKET  &mt LEFT_SHIFT RIGHT_BRACKET
+&kp LSHFT  &trans     &trans     &trans          &trans         &trans            &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp MINUS     &kp LEFT_PARENTHESIS   &kp RIGHT_PARENTHESIS
+                                 &kp LGUI        &mo 4          &kp SPACE         &kp RET       &trans        &kp N0
             >;
         };
 
@@ -72,13 +107,13 @@
             display-name = "Raise";
             bindings = <
 &kp TAB    &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET     &kp AMPS  &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp BSPC
-&kp LCTRL  &u        &trans  &u        &trans    &trans       &kp UP_ARROW  &kp LEFT  &kp RIGHT        &kp DOWN  &kp BSLH  &kp GRAVE
+&kp LCTRL  &umlu     &trans  &umlu     &trans    &trans       &kp UP_ARROW  &kp LEFT  &kp RIGHT        &kp DOWN  &kp BSLH  &kp GRAVE
 &kp LSHFT  &trans    &trans  &trans    &trans    &trans       &kp UNDER     &kp PLUS  &kp LBRC         &kp RBRC  &kp PIPE  &kp TILDE
                              &kp LGUI  &trans    &kp SPACE    &kp RET       &trans    &kp RALT
             >;
         };
 
-        layer_3 {
+        bluetooth_layer {
             bindings = <
 &trans        &trans        &trans        &trans        &bt BT_PRV    &bt BT_NXT    &trans  &trans  &trans  &trans  &trans  &trans
 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans        &trans  &trans  &trans  &trans  &trans  &trans
@@ -87,7 +122,7 @@
             >;
         };
 
-        layer_4 {
+        shiftednum_layer {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &kp LS(N7)  &kp LS(N8)  &kp LS(N9)  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &kp LS(N4)  &kp LS(N5)  &kp LS(N6)  &trans  &trans  &trans
