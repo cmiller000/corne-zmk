@@ -17,7 +17,7 @@
             label = "U";
         };
 
-        U_: U_ {
+        capu: U_ {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LA(U) &kp LS(U)>;
@@ -31,7 +31,7 @@
             label = "A_";
         };
 
-        A_: A_ {
+        capa: A_ {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LA(U) &kp LS(A)>;
@@ -45,7 +45,7 @@
             label = "O";
         };
 
-        O_: O_ {
+        capo: O_ {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LA(U) &kp LS(O)>;
@@ -58,7 +58,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "UM_U";
             #binding-cells = <0>;
-            bindings = <&u>, <&U_>;
+            bindings = <&u>, <&capu>;
         };
 
         bt_ly: bt_ly {
@@ -72,14 +72,14 @@
             compatible = "zmk,behavior-tap-dance";
             label = "UM_A";
             #binding-cells = <0>;
-            bindings = <&a>, <&A_>;
+            bindings = <&a>, <&capa>;
         };
 
         um_o: um_o {
             compatible = "zmk,behavior-tap-dance";
             label = "UM_O";
             #binding-cells = <0>;
-            bindings = <&o>, <&O_>;
+            bindings = <&o>, <&capo>;
         };
     };
 
