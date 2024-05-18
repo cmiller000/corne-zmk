@@ -30,13 +30,13 @@
             bindings = <&kp LA(U) &kp O>;
             label = "UMLO";
         };
- alt_u_shift_a: alt_u_shift_a {
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        bindings = <&kp LALT &kp U &kp LSFT &kp A>;
-        label = "ALT_U_SHIFT_A";
-    };
 
+        alt_u_shift_a: alt_u_shift_a {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LALT &kp U &kp LSFT &kp A>;
+            label = "ALT_U_SHIFT_A";
+        };
     };
 
     behaviors {
@@ -47,6 +47,12 @@
             bindings = <&caps_word>, <&sl 3>;
         };
 
+        tap_a: tap_a {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_A";
+            #binding-cells = <0>;
+            bindings = <&umua>, <&alt_u_shift_a>;
+        };
     };
 
     keymap {
@@ -77,10 +83,10 @@
 
             display-name = "Lower";
             bindings = <
-&kp TAB    &kp N1     &kp N2     &kp LS(LG(N2))  &kp LS(LG(T))  &kp LG(LS(N5))    &kp N7        &kp N7        &kp N9        &kp ASTERISK  &kp LEFT_BRACE         &kp RIGHT_BRACE
-&kp SPACE  &kp SPACE  &kp SPACE  &kp SPACE       &kp SPACE      &kp SPACE         &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp EQUAL     &mt LCMD LEFT_BRACKET  &mt LEFT_SHIFT RIGHT_BRACKET
-&kp LSHFT  &trans     &trans     &trans          &trans         &trans            &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp MINUS     &kp LEFT_PARENTHESIS   &kp RIGHT_PARENTHESIS
-                                 &kp LGUI        &mo 4          &kp SPACE         &kp RET       &trans        &kp N0
+&kp TAB    &kp N1  &kp N2     &kp LS(LG(N2))  &kp LS(LG(T))  &kp LG(LS(N5))    &kp N7        &kp N7        &kp N9        &kp ASTERISK  &kp LEFT_BRACE         &kp RIGHT_BRACE
+&kp SPACE  &tap_a  &kp LA(S)  &kp SPACE       &kp SPACE      &kp SPACE         &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp EQUAL     &mt LCMD LEFT_BRACKET  &mt LEFT_SHIFT RIGHT_BRACKET
+&kp LSHFT  &trans  &trans     &trans          &trans         &trans            &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp MINUS     &kp LEFT_PARENTHESIS   &kp RIGHT_PARENTHESIS
+                              &kp LGUI        &mo 4          &kp SPACE         &kp RET       &trans        &kp N0
             >;
         };
 
