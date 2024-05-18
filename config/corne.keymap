@@ -35,9 +35,13 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
+                <&macro_press>,
                 <&kp LALT &kp U>,
+                <&macro_release>,
                 <&macro_wait_time 2>,
-                <&kp LSHFT &kp A>;
+                <&macro_press>,
+                <&kp LSHFT &kp A>,
+                <&macro_release>;
 
             label = "ALT_U_SHIFT_A";
         };
