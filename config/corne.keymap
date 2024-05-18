@@ -51,13 +51,6 @@
             bindings = <&caps_word &sl 3>;
         };
 
-        tap_a: tap_a {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_A";
-            #binding-cells = <0>;
-            bindings = <&umua &alt_u_shift_a>;
-        };
-
         tap_dance_a: tap_dance_a {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_A";
