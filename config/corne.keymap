@@ -5,8 +5,8 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
 
 / {
     macros {
@@ -37,7 +37,7 @@
             bindings =
                 <&kp LALT &kp U>,
                 <&macro_wait_time 15>,
-                <&kp LEFT_SHIFT &kp A>;
+                <&kp LSHFT &kp A>;
 
             label = "ALT_U_SHIFT_A";
         };
@@ -57,6 +57,16 @@
             #binding-cells = <0>;
             bindings = <&umua>, <&alt_u_shift_a>;
         };
+
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <175>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
     };
 
     keymap {
@@ -69,12 +79,11 @@
             // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
-            display-name = "Base";
             bindings = <
-&mt GRAVE ESCAPE  &kp Q           &kp W           &kp E        &kp R             &kp T            &kp Z    &kp U              &kp I                        &kp O            &kp P               &kp BSPC
-&kp TAB           &hm LEFT_GUI A  &hm LEFT_ALT S  &hm LCTRL D  &hm LEFT_SHIFT F  &kp G            &kp H    &hm RIGHT_SHIFT J  &hm RCTRL K                  &hm RIGHT_ALT L  &hm RIGHT_GUI SEMI  &kp SQT
-&caps_blue        &kp Y           &kp X           &kp C        &kp V             &kp B            &kp N    &kp M              &kp COMMA                    &kp DOT          &kp FSLH            &kp ESC
-                                                  &mo 1        &lt 1 SPACE       &kp BACKSPACE    &kp RET  &mo 2              &mt LA(LC(SPACE)) LG(SPACE)
+&mt GRAVE ESC   &kp Q           &kp W           &kp E        &kp R             &kp T            &kp Z    &kp U              &kp I                        &kp O            &kp P               &kp BSPC
+&kp TAB         &hm LGUI A      &mt LALT S      &hm LCTL D   &hm LSHFT F       &kp G            &kp H    &hm RSHFT J        &hm RCTL K                   &hm RALT L       &hm RGUI SEMI       &kp SQT
+&caps_blue      &kp Y           &kp X           &kp C        &kp V             &kp B            &kp N    &kp M              &kp COMMA                    &kp DOT          &kp FSLH            &kp ESC
+                                                &mo 1        &lt 1 SPACE       &kp BSPC         &kp RET  &mo 2              &mt LA(LC(SPACE)) LG(SPACE)
             >;
         };
 
@@ -85,11 +94,10 @@
             // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
-            display-name = "Lower";
             bindings = <
-&kp F7     &kp F6  &kp F4     &kp LS(LG(N2))  &kp LS(LG(T))  &kp LG(LS(N5))    &kp N7        &kp N7        &kp N9        &kp ASTERISK  &kp LEFT_BRACE         &kp RIGHT_BRACE
-&kp SPACE  &tap_a  &kp LA(S)  &kp SPACE       &kp SPACE      &kp SPACE         &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp EQUAL     &mt LCMD LEFT_BRACKET  &mt LEFT_SHIFT RIGHT_BRACKET
-&kp LSHFT  &trans  &trans     &trans          &trans         &trans            &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp MINUS     &kp LEFT_PARENTHESIS   &kp RIGHT_PARENTHESIS
+&kp F7     &kp F6  &kp F4     &kp LS(LG(N2))  &kp LS(LG(T))  &kp LG(LS(N5))    &kp N7        &kp N7        &kp N9        &kp ASTERISK  &kp LBKT              &kp RBKT
+&kp SPACE  &tap_a  &kp LA(S)  &kp SPACE       &kp SPACE      &kp SPACE         &kp N4        &kp N5        &kp N6        &kp EQUAL     &mt LCMD LEFT_BRACKET  &mt LSHFT RIGHT_BRACKET
+&kp LSHFT  &trans  &trans     &trans          &trans         &trans            &kp N1        &kp N2        &kp N3        &kp MINUS     &kp LPAR               &kp RPAR
                               &kp LGUI        &mo 4          &kp SPACE         &kp RET       &trans        &kp N0
             >;
         };
@@ -101,7 +109,6 @@
             // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
-            display-name = "Raise";
             bindings = <
 &kp TAB    &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET     &kp AMPS  &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp BSPC
 &kp LCTRL  &umlu     &trans  &umlu     &trans    &trans       &kp UP_ARROW  &kp LEFT  &kp RIGHT        &kp DOWN  &kp BSLH  &kp GRAVE
