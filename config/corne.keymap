@@ -30,6 +30,13 @@
             bindings = <&kp LA(U) &kp O>;
             label = "UMLO";
         };
+ alt_u_shift_a: alt_u_shift_a {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&kp LALT &kp U &kp LSFT &kp A>;
+        label = "ALT_U_SHIFT_A";
+    };
+
     };
 
     behaviors {
@@ -39,6 +46,7 @@
             #binding-cells = <0>;
             bindings = <&caps_word>, <&sl 3>;
         };
+
     };
 
     keymap {
