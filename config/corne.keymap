@@ -124,6 +124,20 @@
             flavor = "tap-preferred";
             tapping-term-ms = <180>;
         };
+
+        cpu: cpu {
+            compatible = "zmk,behavior-tap-dance";
+            label = "CPU";
+            #binding-cells = <0>;
+            bindings = <&kp LG(C)>, <&kp LG(V)>, <&kp LG(U)>;
+        };
+
+        hyper_cap: hyper_cap {
+            compatible = "zmk,behavior-tap-dance";
+            label = "HYPER_CAP";
+            #binding-cells = <0>;
+            bindings = <&sk LS(LA(LC(LEFT_GUI)))>, <&caps_word>;
+        };
     };
 
     keymap {
@@ -139,8 +153,8 @@
             bindings = <
 &mt GRAVE ESC  &kp Q       &kp W           &kp E        &kp R        &kp T            &kp Z  &kp U        &kp I                        &kp O       &kp P                &mt RIGHT_BRACKET LEFT_BRACKET
 &kp TAB        &hm LGUI A  &hm LEFT_ALT S  &hm LCTRL D  &hm LSHFT F  &kp G            &kp H  &hm RSHFT J  &hm RCTRL K                  &hm RALT L  &hm RGUI SEMI        &kp HASH
-&caps_blue     &kp Y       &kp X           &kp C        &kp V        &kp B            &kp N  &kp M        &kp COMMA                    &kp DOT     &mt BACKSLASH SLASH  &kp MINUS
-                                           &mo 1        &lt 2 SPACE  &kp BACKSPACE    &mo 2  &kp ENTER    &mt LA(LC(SPACE)) LG(SPACE)
+&hyper_cap     &kp Y       &kp X           &kp C        &kp V        &kp B            &kp N  &kp M        &kp COMMA                    &kp DOT     &mt BACKSLASH SLASH  &kp MINUS
+                                           &mo 1        &lt 2 SPACE  &kp BACKSPACE    &cpu   &kp ENTER    &mt LA(LC(SPACE)) LG(SPACE)
             >;
         };
 
@@ -167,10 +181,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp K_MUTE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp HASH  &kp DLLR    &kp PRCNT           &kp CARET     &kp AMPS  &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp BSPC
-&kp LCTRL   &umlu              &trans           &umlu     &kp LSHIFT  &trans              &kp UP_ARROW  &kp LEFT  &kp RIGHT        &kp DOWN  &kp BSLH  &kp GRAVE
-&kp C_PLAY  &kp C_PREV         &kp C_NEXT       &kp F14   &kp F15     &kp SINGLE_QUOTE    &kp UNDER     &kp PLUS  &kp LBRC         &kp RBRC  &kp PIPE  &kp TILDE
-                                                &kp LGUI  &trans      &kp SPACE           &kp RET       &trans    &kp RALT
+&kp K_MUTE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp HASH   &kp DLLR    &kp PRCNT           &kp CARET     &kp AMPS  &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp BSPC
+&kp F14     &kp F15            &trans           &umlu      &kp LSHIFT  &trans              &kp UP_ARROW  &kp LEFT  &kp RIGHT        &kp DOWN  &kp BSLH  &kp GRAVE
+&kp C_PLAY  &kp C_PREV         &kp C_NEXT       &kp LG(C)  &kp LG(V)   &kp SINGLE_QUOTE    &kp UNDER     &kp PLUS  &kp LBRC         &kp RBRC  &kp PIPE  &kp TILDE
+                                                &kp LGUI   &trans      &kp SPACE           &kp RET       &mo 3     &kp RALT
             >;
         };
 
